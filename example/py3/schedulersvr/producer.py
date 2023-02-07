@@ -28,8 +28,8 @@ async def main():
 
     # pack and send request, handle the response.
     input_body = {
-        "a": ini["input"]["a"],
-        "b": ini["input"]["b"],
+        "a": int(ini["input"]["a"]),
+        "b": int(ini["input"]["b"]),
     }
     print(input_body)
     add_task_model = schPy3.AddTaskReq(session_id=str(

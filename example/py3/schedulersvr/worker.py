@@ -5,6 +5,7 @@ import scheduler_py3 as schPy3
 from scheduler_py3 import worker_handler
 import argparse
 import asyncio
+import json
 import configparser
 
 parser = argparse.ArgumentParser()
@@ -17,7 +18,9 @@ args = parser.parse_args()
 
 def solve_task(input: str) -> str:
     print("get input = {}".format(input))
-    return input
+    obj = json.loads(input)
+    result = int(obj["a"]) + int(obj["b"])
+    return json.dumps({"result": result})
 
 
 async def main():
